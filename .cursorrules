@@ -1,0 +1,88 @@
+# Cursor AI Rules for Enunciation App
+
+## Project Context
+This is a mobile-first enunciation training app built with Next.js, Tailwind CSS, and OpenAI APIs. The goal is to help users improve their speech clarity, pacing, and confidence through AI-powered feedback.
+
+## Development Principles
+
+### Code Quality
+- Write clean, readable TypeScript code
+- Use meaningful variable and function names
+- Add comments for complex logic
+- Follow Next.js and React best practices
+- Maintain consistent code formatting
+
+### Performance
+- Optimize for mobile devices first
+- Minimize bundle size and dependencies
+- Use efficient data structures and algorithms
+- Implement proper error handling
+- Cache data appropriately
+
+### User Experience
+- Maintain 3-click maximum workflow
+- Ensure mobile-first responsive design
+- Provide clear feedback and loading states
+- Handle errors gracefully
+- Keep interface simple and intuitive
+
+## File Organization
+- Components in `/components` directory
+- Utilities in `/utils` directory
+- Pages in `/app` directory
+- Styles in `/app/globals.css`
+- API routes in `/app/api` directory
+
+## Dependencies
+- Keep dependencies minimal and focused
+- Use established, well-maintained packages
+- Avoid unnecessary libraries
+- Document any new dependencies added
+
+## Testing
+- Test all user flows manually
+- Verify mobile responsiveness
+- Check audio recording functionality
+- Validate API integrations
+- Test error scenarios
+
+## Security
+- Never commit API keys or secrets
+- Use environment variables for sensitive data
+- Validate user inputs
+- Implement proper error handling
+- Follow security best practices
+
+## Documentation
+- Update README.md for significant changes
+- Document new features and APIs
+- Keep code comments up to date
+- Maintain deployment documentation
+
+## Git Workflow
+- Use descriptive commit messages
+- Create feature branches for new work
+- Test changes before merging
+- Keep commits focused and atomic
+- Document breaking changes
+
+## AI Integration
+- Handle OpenAI API errors gracefully
+- Implement proper rate limiting
+- Cache results when appropriate
+- Provide fallback responses
+- Monitor API usage and costs
+
+## Mobile Considerations
+- Test on actual mobile devices
+- Ensure touch targets are large enough
+- Optimize for different screen sizes
+- Handle mobile-specific audio permissions
+- Test offline functionality
+
+## Performance Targets
+- Page load time < 3 seconds
+- API response time < 2 seconds
+- Mobile performance score > 90
+- Bundle size < 500KB
+- Core Web Vitals in green
