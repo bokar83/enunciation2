@@ -21,8 +21,6 @@ export default function HomePage() {
       <section className="mb-12">
         <MotivationQuote 
           tone="inspiring"
-          autoRotate={true}
-          rotationInterval={8000}
           className="max-w-3xl mx-auto"
         />
       </section>

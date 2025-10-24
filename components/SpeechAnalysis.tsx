@@ -100,7 +100,6 @@ export function SpeechAnalysis({ analysis, transcript }: SpeechAnalysisProps) {
       <div className="mt-8">
         <MotivationQuote 
           tone="encouraging"
-          autoRotate={false}
           className="max-w-2xl mx-auto"
         />
       </div>

@@ -1,8 +1,9 @@
 export interface MotivationQuote {
   text: string
   author: string
-  category: 'speaking' | 'confidence' | 'communication' | 'leadership' | 'growth' | 'tough_love'
+  category: 'speaking' | 'confidence' | 'communication' | 'leadership' | 'growth' | 'tough_love' | 'tips' | 'wisdom'
   tone: 'encouraging' | 'challenging' | 'inspiring' | 'direct'
+  type: 'quote' | 'tip' | 'wisdom'
 }
 
 export const motivationQuotes: MotivationQuote[] = [
@@ -11,7 +12,8 @@ export const motivationQuotes: MotivationQuote[] = [
     text: "The way to get started is to quit talking and begin doing.",
     author: "Walt Disney",
     category: "speaking",
-    tone: "direct"
+    tone: "direct",
+    type: "quote"
   },
   {
     text: "Your voice is your calling card. Make it count.",
@@ -623,7 +625,152 @@ export const motivationQuotes: MotivationQuote[] = [
     text: "You're not improving by staying silent. You're improving by speaking up.",
     author: "Unknown",
     category: "tough_love",
-    tone: "direct"
+    tone: "direct",
+    type: "quote"
+  },
+
+  // PRACTICAL TIPS
+  {
+    text: "Practice the 'Power Pause' - take a 2-second breath before speaking to center yourself and command attention.",
+    author: "Speech Coach Tip",
+    category: "tips",
+    tone: "direct",
+    type: "tip"
+  },
+  {
+    text: "Record yourself speaking for 1 minute daily. Your voice will improve faster than you think.",
+    author: "Daily Practice Tip",
+    category: "tips",
+    tone: "encouraging",
+    type: "tip"
+  },
+  {
+    text: "Stand up straight, shoulders back, chin level. Your posture affects your voice more than you realize.",
+    author: "Body Language Tip",
+    category: "tips",
+    tone: "direct",
+    type: "tip"
+  },
+  {
+    text: "Replace 'um' and 'uh' with a purposeful pause. Silence is more powerful than filler words.",
+    author: "Elimination Strategy",
+    category: "tips",
+    tone: "challenging",
+    type: "tip"
+  },
+  {
+    text: "Speak 20% slower than you think you should. Your audience will thank you for the clarity.",
+    author: "Pacing Tip",
+    category: "tips",
+    tone: "direct",
+    type: "tip"
+  },
+  {
+    text: "Practice tongue twisters daily. They're not just fun - they're vocal exercises that build articulation.",
+    author: "Articulation Tip",
+    category: "tips",
+    tone: "encouraging",
+    type: "tip"
+  },
+  {
+    text: "Breathe from your diaphragm, not your chest. Deep breathing = powerful voice.",
+    author: "Breathing Technique",
+    category: "tips",
+    tone: "direct",
+    type: "tip"
+  },
+  {
+    text: "Record yourself reading aloud for 5 minutes daily. Your pronunciation will improve dramatically.",
+    author: "Reading Practice",
+    category: "tips",
+    tone: "encouraging",
+    type: "tip"
+  },
+  {
+    text: "Practice in front of a mirror. Watch your facial expressions and body language.",
+    author: "Visual Practice",
+    category: "tips",
+    tone: "direct",
+    type: "tip"
+  },
+  {
+    text: "Use the 'Rule of Three' - make three key points maximum. More than that confuses your audience.",
+    author: "Structure Tip",
+    category: "tips",
+    tone: "direct",
+    type: "tip"
+  },
+
+  // WORDS OF WISDOM
+  {
+    text: "Your voice is the instrument of your soul. Play it with intention, not habit.",
+    author: "Ancient Wisdom",
+    category: "wisdom",
+    tone: "inspiring",
+    type: "wisdom"
+  },
+  {
+    text: "The master has failed more times than the beginner has even tried. Keep practicing.",
+    author: "Learning Wisdom",
+    category: "wisdom",
+    tone: "encouraging",
+    type: "wisdom"
+  },
+  {
+    text: "Every expert was once a beginner. Every pro was once an amateur. Every master was once a disaster.",
+    author: "Growth Wisdom",
+    category: "wisdom",
+    tone: "inspiring",
+    type: "wisdom"
+  },
+  {
+    text: "The quality of your communication determines the quality of your relationships.",
+    author: "Relationship Wisdom",
+    category: "wisdom",
+    tone: "inspiring",
+    type: "wisdom"
+  },
+  {
+    text: "Speak with conviction, listen with compassion, and pause with purpose.",
+    author: "Communication Wisdom",
+    category: "wisdom",
+    tone: "inspiring",
+    type: "wisdom"
+  },
+  {
+    text: "Your voice is your fingerprint - unique, powerful, and irreplaceable. Honor it.",
+    author: "Identity Wisdom",
+    category: "wisdom",
+    tone: "inspiring",
+    type: "wisdom"
+  },
+  {
+    text: "The pause between words is where understanding lives. Don't rush past it.",
+    author: "Timing Wisdom",
+    category: "wisdom",
+    tone: "inspiring",
+    type: "wisdom"
+  },
+  {
+    text: "Confidence is not the absence of fear; it's the decision to speak despite it.",
+    author: "Courage Wisdom",
+    category: "wisdom",
+    tone: "inspiring",
+    type: "wisdom"
+  },
+  {
+    text: "Your words have the power to heal or harm. Choose them with the same care you'd choose medicine.",
+    author: "Responsibility Wisdom",
+    category: "wisdom",
+    tone: "inspiring",
+    type: "wisdom"
+  },
+  {
+    text: "The best speakers are not the loudest; they are the clearest.",
+    author: "Clarity Wisdom",
+    category: "wisdom",
+    tone: "inspiring",
+    type: "wisdom"
   }
 ]
 

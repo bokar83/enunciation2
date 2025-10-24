@@ -37,8 +37,6 @@ export default function ProgressPage() {
         <div className="mb-8">
           <MotivationQuote 
             category="growth"
-            autoRotate={true}
-            rotationInterval={10000}
             className="max-w-3xl mx-auto"
           />
         </div>
