@@ -1,3 +1,5 @@
+import { MotivationQuote } from './MotivationQuote'
+
 interface SpeechAnalysisProps {
   analysis: {
     pace: number
@@ -92,6 +94,15 @@ export function SpeechAnalysis({ analysis, transcript }: SpeechAnalysisProps) {
         <button className="btn-secondary flex-1">
           📊 View Progress
         </button>
+      </div>
+
+      {/* Motivation Quote */}
+      <div className="mt-8">
+        <MotivationQuote 
+          tone="encouraging"
+          autoRotate={false}
+          className="max-w-2xl mx-auto"
+        />
       </div>
     </div>
   )

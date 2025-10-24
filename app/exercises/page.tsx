@@ -1,4 +1,5 @@
 import { ExerciseCard } from '@/components/ExerciseCard'
+import { EncouragingMotivation } from '@/components/MotivationQuote'
 
 const exercises = [
   {
@@ -46,6 +47,11 @@ export default function ExercisesPage() {
           <p className="text-lg text-carbon-600">
             Choose an exercise to improve your speaking skills
           </p>
+        </div>
+
+        {/* Encouraging Motivation */}
+        <div className="mb-8">
+          <EncouragingMotivation className="max-w-3xl mx-auto" />
         </div>
         
         <div className="grid md:grid-cols-2 gap-6">

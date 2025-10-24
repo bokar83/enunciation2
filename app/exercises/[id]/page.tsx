@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
+import { SpeakingMotivation } from '@/components/MotivationQuote'
 
 const exercises = {
   1: {
@@ -118,6 +119,11 @@ export default function ExercisePage() {
               Step {currentStep + 1} of {exercise.content.length}
             </div>
           </div>
+        </div>
+
+        {/* Speaking Motivation */}
+        <div className="mb-8">
+          <SpeakingMotivation className="max-w-3xl mx-auto" />
         </div>
 
         <div className="card mb-8">

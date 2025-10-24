@@ -1,8 +1,8 @@
 import OpenAI from 'openai'
 
-const openai = new OpenAI({
+const openai = process.env.OPENAI_API_KEY ? new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
-})
+}) : null
 
 export interface SpeechAnalysisResult {
   pace: number
@@ -15,6 +15,18 @@ export interface SpeechAnalysisResult {
 
 export async function analyzeSpeechWithWhisper(audioBlob: Blob): Promise<string> {
   try {
+    if (!process.env.OPENAI_API_KEY) {
+      // Demo mode - return mock transcript
+      const mockTranscripts = [
+        "This is a sample recording for demonstration purposes. The enunciation coach app is working perfectly in demo mode.",
+        "Hello, this is a demonstration of the speech analysis feature. The app provides detailed feedback on your speaking skills.",
+        "Welcome to the enunciation coach application. This tool helps improve speech clarity, pacing, and overall confidence in communication.",
+        "I'm practicing my speech clarity and confidence. This app provides excellent feedback to help me improve my speaking skills.",
+        "The coastal clarity design creates a calming atmosphere perfect for speech coaching. The colors are inspired by ocean and coastal themes."
+      ]
+      return mockTranscripts[Math.floor(Math.random() * mockTranscripts.length)]
+    }
+
     const formData = new FormData()
     formData.append('file', audioBlob, 'recording.wav')
     formData.append('model', 'whisper-1')
@@ -41,6 +53,47 @@ export async function analyzeSpeechWithWhisper(audioBlob: Blob): Promise<string>
 
 export async function generateSpeechAnalysis(transcript: string): Promise<Omit<SpeechAnalysisResult, 'transcript'>> {
   try {
+    if (!openai) {
+      // Demo mode - return mock analysis
+      const mockAnalyses = [
+        {
+          pace: 82,
+          clarity: 76,
+          confidence: 85,
+          feedback: "Excellent work! Your pace is well-controlled and your confidence really shines through. Your clarity could use a bit more attention - try to articulate each word more distinctly.",
+          suggestions: [
+            "Slow down slightly to improve word clarity",
+            "Practice tongue twisters to strengthen articulation",
+            "Take deeper breaths to maintain steady pace"
+          ]
+        },
+        {
+          pace: 95,
+          clarity: 88,
+          confidence: 78,
+          feedback: "Great clarity and articulation! You're speaking at a good pace, though you might benefit from slowing down just a touch to sound more confident.",
+          suggestions: [
+            "Reduce speaking speed by 10-15%",
+            "Add more pauses between sentences",
+            "Practice confident breathing techniques"
+          ]
+        },
+        {
+          pace: 68,
+          clarity: 92,
+          confidence: 91,
+          feedback: "Outstanding confidence and crystal-clear articulation! Your pace is perfect for clear communication. This is exactly how confident speaking should sound.",
+          suggestions: [
+            "Maintain this excellent pace and clarity",
+            "Share your speaking techniques with others",
+            "Continue practicing to build consistency"
+          ]
+        }
+      ]
+      
+      return mockAnalyses[Math.floor(Math.random() * mockAnalyses.length)]
+    }
+
     const prompt = `
 You are an expert speech coach analyzing a transcript. Provide feedback on:
 1. Pace (0-100): How well-paced was the speech?

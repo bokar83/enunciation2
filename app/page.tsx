@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { RecordButton } from '@/components/RecordButton'
 import { FeatureCard } from '@/components/FeatureCard'
+import { MotivationQuote } from '@/components/MotivationQuote'
 
 export default function HomePage() {
   return (
@@ -15,6 +16,16 @@ export default function HomePage() {
         </p>
         <RecordButton />
       </header>
+
+      {/* Motivation Quote */}
+      <section className="mb-12">
+        <MotivationQuote 
+          tone="inspiring"
+          autoRotate={true}
+          rotationInterval={8000}
+          className="max-w-3xl mx-auto"
+        />
+      </section>
 
       {/* Features Grid */}
       <section className="grid md:grid-cols-3 gap-6 mb-12">

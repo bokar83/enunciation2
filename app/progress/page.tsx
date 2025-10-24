@@ -1,5 +1,6 @@
 import { ProgressChart } from '@/components/ProgressChart'
 import { StatsCard } from '@/components/StatsCard'
+import { MotivationQuote } from '@/components/MotivationQuote'
 
 // Mock data - in a real app, this would come from your database
 const mockStats = {
@@ -30,6 +31,16 @@ export default function ProgressPage() {
           <p className="text-lg text-carbon-600">
             Track your speaking improvement over time
           </p>
+        </div>
+
+        {/* Growth Motivation */}
+        <div className="mb-8">
+          <MotivationQuote 
+            category="growth"
+            autoRotate={true}
+            rotationInterval={10000}
+            className="max-w-3xl mx-auto"
+          />
         </div>
         
         {/* Stats Cards */}

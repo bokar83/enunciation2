@@ -1,4 +1,5 @@
 import { RecordingInterface } from '@/components/RecordingInterface'
+import { CoachMotivation } from '@/components/MotivationQuote'
 
 export default function RecordPage() {
   return (
@@ -11,6 +12,11 @@ export default function RecordPage() {
           <p className="text-lg text-carbon-600">
             Speak clearly and confidently. We'll analyze your pace, clarity, and confidence.
           </p>
+        </div>
+
+        {/* Coach Motivation */}
+        <div className="mb-8">
+          <CoachMotivation className="max-w-3xl mx-auto" />
         </div>
         
         <RecordingInterface />
