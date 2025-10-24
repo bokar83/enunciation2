@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 interface AudioRecorderProps {
   isRecording: boolean
@@ -11,8 +11,37 @@ interface AudioRecorderProps {
 
 export function AudioRecorder({ isRecording, onStart, onStop, onComplete }: AudioRecorderProps) {
   const [hasPermission, setHasPermission] = useState<boolean | null>(null)
+  const [recordingTime, setRecordingTime] = useState(0)
   const mediaRecorderRef = useRef<MediaRecorder | null>(null)
   const audioChunksRef = useRef<Blob[]>([])
+  const timerRef = useRef<NodeJS.Timeout | null>(null)
+
+  useEffect(() => {
+    if (isRecording) {
+      timerRef.current = setInterval(() => {
+        setRecordingTime(prev => prev + 1)
+      }, 1000)
+    } else {
+      if (timerRef.current) {
+        clearInterval(timerRef.current)
+        timerRef.current = null
+      }
+      setRecordingTime(0)
+    }
+
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current)
+        timerRef.current = null
+      }
+    }
+  }, [isRecording])
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60)
+    const secs = seconds % 60
+    return `${mins}:${secs.toString().padStart(2, '0')}`
+  }
 
   const requestMicrophonePermission = async () => {
     try {
@@ -106,7 +135,7 @@ export function AudioRecorder({ isRecording, onStart, onStop, onComplete }: Audi
         <div className="mt-4">
           <div className="inline-flex items-center text-orange-600">
             <span className="inline-block w-3 h-3 bg-orange-500 rounded-full mr-2 animate-pulse"></span>
-            Recording in progress...
+            Recording in progress... {formatTime(recordingTime)}
           </div>
         </div>
       )}

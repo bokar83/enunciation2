@@ -45,45 +45,51 @@ export function RecordingInterface({ onAnalysisComplete }: RecordingInterfacePro
         setTranscript(result.transcript)
         onAnalysisComplete?.(result)
       } else {
-        // Demo mode - generate realistic mock analysis
-        const mockAnalyses = [
-          {
-            pace: 82,
-            clarity: 76,
-            confidence: 85,
-            feedback: "Excellent work! Your pace is well-controlled and your confidence really shines through. Your clarity could use a bit more attention - try to articulate each word more distinctly.",
-            suggestions: [
-              "Slow down slightly to improve word clarity",
-              "Practice tongue twisters to strengthen articulation",
-              "Take deeper breaths to maintain steady pace"
-            ],
-            transcript: "This is a sample recording for demonstration purposes. The enunciation coach app is working perfectly in demo mode."
-          },
-          {
-            pace: 95,
-            clarity: 88,
-            confidence: 78,
-            feedback: "Great clarity and articulation! You're speaking at a good pace, though you might benefit from slowing down just a touch to sound more confident.",
-            suggestions: [
-              "Reduce speaking speed by 10-15%",
-              "Add more pauses between sentences",
-              "Practice confident breathing techniques"
-            ],
-            transcript: "Hello, this is a demonstration of the speech analysis feature. The app provides detailed feedback on your speaking skills."
-          },
-          {
-            pace: 68,
-            clarity: 92,
-            confidence: 91,
-            feedback: "Outstanding confidence and crystal-clear articulation! Your pace is perfect for clear communication. This is exactly how confident speaking should sound.",
-            suggestions: [
-              "Maintain this excellent pace and clarity",
-              "Share your speaking techniques with others",
-              "Continue practicing to build consistency"
-            ],
-            transcript: "Welcome to the enunciation coach application. This tool helps improve speech clarity, pacing, and overall confidence in communication."
-          }
-        ]
+            // Demo mode - generate realistic mock analysis with tough coaching
+            const mockAnalyses = [
+              {
+                pace: 45,
+                clarity: 62,
+                confidence: 78,
+                feedback: "Look, you're speaking WAY too fast and slurring your words. This isn't going to cut it if you want to communicate like Obama or Churchill. You're at 180+ words per minute when you should be at 140-160. Your clarity is suffering because you're rushing through words instead of articulating them properly.",
+                suggestions: [
+                  "SLOW DOWN. Practice reading at 140 words per minute - use a metronome app",
+                  "Record yourself reading the Gettysburg Address slowly and clearly",
+                  "Practice the 'Power Pause' - take 2 seconds between sentences",
+                  "Do daily tongue twister exercises to strengthen articulation",
+                  "Practice the 'Churchill Method' - speak each word as if it costs money"
+                ],
+                transcript: "This is a sample recording for demonstration purposes. The enunciation coach app is working perfectly in demo mode and I need to slow down my speech to be more like the great orators."
+              },
+              {
+                pace: 52,
+                clarity: 58,
+                confidence: 82,
+                feedback: "You're still rushing and mumbling. Your confidence is good, but confidence without clarity is just noise. You're speaking at 200+ words per minute - that's not communication, that's verbal diarrhea. Great speakers like Reagan and Jobs spoke slowly and deliberately.",
+                suggestions: [
+                  "Practice the 'Obama Pause' - pause for 3 seconds before important points",
+                  "Read aloud for 10 minutes daily at 130 words per minute maximum",
+                  "Practice the 'Jobs Method' - repeat key phrases three times slowly",
+                  "Record yourself and count how many words you speak per minute",
+                  "Use the 'Churchill Technique' - speak as if addressing a large hall"
+                ],
+                transcript: "Hello, this is a demonstration of the speech analysis feature. The app provides detailed feedback on your speaking skills and I really need to work on slowing down and enunciating clearly like the great communicators."
+              },
+              {
+                pace: 38,
+                clarity: 89,
+                confidence: 94,
+                feedback: "NOW we're talking! This is the pace and clarity of a true communicator. You're speaking at 150 words per minute with excellent articulation. This is how Churchill delivered his speeches - slow, deliberate, and powerful. Keep this up and you'll command attention like the greats.",
+                suggestions: [
+                  "Maintain this excellent pace - you've found your rhythm",
+                  "Practice this pace with longer speeches (5+ minutes)",
+                  "Record yourself giving a 3-minute presentation at this pace",
+                  "Practice the 'Reagan Method' - vary your pace for emphasis",
+                  "Share your speaking techniques with others - you're on the right track"
+                ],
+                transcript: "Welcome to the enunciation coach application. This tool helps improve speech clarity, pacing, and overall confidence in communication. I am speaking slowly and clearly, enunciating each word properly like the great orators of history."
+              }
+            ]
         
         const randomAnalysis = mockAnalyses[Math.floor(Math.random() * mockAnalyses.length)]
         setAnalysis(randomAnalysis)
