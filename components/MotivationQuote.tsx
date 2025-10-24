@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { getRandomQuote, getQuoteByCategory, MotivationQuote } from '@/utils/motivationQuotes'
+import { getRandomQuote, getQuoteByCategory, getQuoteByTone, MotivationQuote } from '@/utils/motivationQuotes'
 
 interface MotivationQuoteProps {
   category?: 'speaking' | 'confidence' | 'communication' | 'leadership' | 'growth' | 'tough_love'
